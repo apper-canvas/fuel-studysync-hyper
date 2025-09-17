@@ -1,0 +1,112 @@
+[
+  {
+    "Id": 1,
+    "courseId": 1,
+    "title": "Calculus Problem Set 5",
+    "description": "Solve problems 1-20 from Chapter 7, focusing on integration techniques",
+    "dueDate": "2024-01-25",
+    "priority": "high",
+    "completed": false,
+    "maxPoints": 100,
+    "grade": null
+  },
+  {
+    "Id": 2,
+    "courseId": 2,
+    "title": "Lab Report: Motion Analysis",
+    "description": "Write a comprehensive report on the projectile motion experiment",
+    "dueDate": "2024-01-27",
+    "priority": "medium",
+    "completed": false,
+    "maxPoints": 50,
+    "grade": null
+  },
+  {
+    "Id": 3,
+    "courseId": 3,
+    "title": "Essay: Shakespeare Analysis",
+    "description": "5-page analysis of themes in Hamlet",
+    "dueDate": "2024-01-30",
+    "priority": "high",
+    "completed": false,
+    "maxPoints": 100,
+    "grade": null
+  },
+  {
+    "Id": 4,
+    "courseId": 4,
+    "title": "Programming Project",
+    "description": "Implement a sorting algorithm in Python with time complexity analysis",
+    "dueDate": "2024-02-01",
+    "priority": "high",
+    "completed": false,
+    "maxPoints": 150,
+    "grade": null
+  },
+  {
+    "Id": 5,
+    "courseId": 5,
+    "title": "Research Paper Outline",
+    "description": "Create detailed outline for final research paper on World War II",
+    "dueDate": "2024-01-28",
+    "priority": "medium",
+    "completed": false,
+    "maxPoints": 25,
+    "grade": null
+  },
+  {
+    "Id": 6,
+    "courseId": 1,
+    "title": "Midterm Exam",
+    "description": "Comprehensive exam covering chapters 1-6",
+    "dueDate": "2024-01-22",
+    "priority": "high",
+    "completed": true,
+    "maxPoints": 200,
+    "grade": 175
+  },
+  {
+    "Id": 7,
+    "courseId": 2,
+    "title": "Quiz: Newton's Laws",
+    "description": "Short quiz on the three laws of motion",
+    "dueDate": "2024-01-20",
+    "priority": "low",
+    "completed": true,
+    "maxPoints": 20,
+    "grade": 18
+  },
+  {
+    "Id": 8,
+    "courseId": 3,
+    "title": "Poetry Analysis",
+    "description": "Analyze two poems by Robert Frost",
+    "dueDate": "2024-01-18",
+    "priority": "medium",
+    "completed": true,
+    "maxPoints": 75,
+    "grade": 67
+  },
+  {
+    "Id": 9,
+    "courseId": 4,
+    "title": "Database Design",
+    "description": "Design a relational database for a library system",
+    "dueDate": "2024-01-24",
+    "priority": "medium",
+    "completed": false,
+    "maxPoints": 100,
+    "grade": null
+  },
+  {
+    "Id": 10,
+    "courseId": 5,
+    "title": "Chapter 12 Quiz",
+    "description": "Multiple choice quiz on Cold War events",
+    "dueDate": "2024-01-26",
+    "priority": "low",
+    "completed": false,
+    "maxPoints": 30,
+    "grade": null
+  }
+]

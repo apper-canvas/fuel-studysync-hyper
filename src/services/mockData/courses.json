@@ -1,0 +1,67 @@
+[
+  {
+    "Id": 1,
+    "name": "Advanced Mathematics",
+    "instructor": "Dr. Sarah Wilson",
+    "credits": 4,
+    "color": "#7C3AED",
+    "currentGrade": 87.5,
+    "schedule": {
+      "days": ["Monday", "Wednesday", "Friday"],
+      "time": "10:00 AM - 11:30 AM",
+      "location": "Room 201, Math Building"
+    }
+  },
+  {
+    "Id": 2,
+    "name": "Physics I",
+    "instructor": "Prof. Michael Chen",
+    "credits": 4,
+    "color": "#EC4899",
+    "currentGrade": 92.3,
+    "schedule": {
+      "days": ["Tuesday", "Thursday"],
+      "time": "2:00 PM - 4:00 PM",
+      "location": "Lab 105, Science Building"
+    }
+  },
+  {
+    "Id": 3,
+    "name": "English Literature",
+    "instructor": "Dr. Emma Rodriguez",
+    "credits": 3,
+    "color": "#10B981",
+    "currentGrade": 89.7,
+    "schedule": {
+      "days": ["Monday", "Wednesday"],
+      "time": "9:00 AM - 10:30 AM",
+      "location": "Room 302, Liberal Arts"
+    }
+  },
+  {
+    "Id": 4,
+    "name": "Computer Science",
+    "instructor": "Prof. David Kim",
+    "credits": 4,
+    "color": "#F59E0B",
+    "currentGrade": 94.1,
+    "schedule": {
+      "days": ["Tuesday", "Thursday"],
+      "time": "11:00 AM - 12:30 PM",
+      "location": "Computer Lab 2"
+    }
+  },
+  {
+    "Id": 5,
+    "name": "History",
+    "instructor": "Dr. Robert Johnson",
+    "credits": 3,
+    "color": "#3B82F6",
+    "currentGrade": 85.6,
+    "schedule": {
+      "days": ["Monday", "Friday"],
+      "time": "1:00 PM - 2:30 PM",
+      "location": "Room 150, History Hall"
+    }
+  }
+]

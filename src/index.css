@@ -1,0 +1,123 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import 'react-toastify/dist/ReactToastify.css';
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #F8FAFC;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Toast Styling Overrides */
+.Toastify__toast-container {
+  width: 320px;
+  z-index: 9999;
+}
+
+.Toastify__toast {
+  border-radius: 8px;
+  padding: 16px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.Toastify__toast--success {
+  background: linear-gradient(135deg, #10B981, #059669);
+  color: white;
+}
+
+.Toastify__toast--error {
+  background: linear-gradient(135deg, #EF4444, #DC2626);
+  color: white;
+}
+
+.Toastify__toast--info {
+  background: linear-gradient(135deg, #3B82F6, #2563EB);
+  color: white;
+}
+
+.Toastify__progress-bar {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Animation utilities */
+@keyframes shimmer {
+  0% {
+    background-position: -468px 0;
+  }
+  100% {
+    background-position: 468px 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+  background-size: 800px 104px;
+  animation: shimmer 1.5s linear infinite;
+}
+
+/* Grade color utilities */
+.grade-a {
+  @apply bg-gradient-to-r from-green-400 to-green-600 text-white;
+}
+
+.grade-b {
+  @apply bg-gradient-to-r from-blue-400 to-blue-600 text-white;
+}
+
+.grade-c {
+  @apply bg-gradient-to-r from-yellow-400 to-yellow-600 text-white;
+}
+
+.grade-d {
+  @apply bg-gradient-to-r from-orange-400 to-orange-600 text-white;
+}
+
+.grade-f {
+  @apply bg-gradient-to-r from-red-400 to-red-600 text-white;
+}
+
+/* Priority indicators */
+.priority-high {
+  @apply border-l-4 border-red-500;
+}
+
+.priority-medium {
+  @apply border-l-4 border-yellow-500;
+}
+
+.priority-low {
+  @apply border-l-4 border-green-500;
+}
