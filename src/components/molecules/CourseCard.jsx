@@ -1,11 +1,12 @@
 import React from "react";
+import { cn } from "@/utils/cn";
+import ApperIcon from "@/components/ApperIcon";
+import Schedule from "@/components/pages/Schedule";
+import Button from "@/components/atoms/Button";
 import Card from "@/components/atoms/Card";
 import Badge from "@/components/atoms/Badge";
-import Button from "@/components/atoms/Button";
-import ApperIcon from "@/components/ApperIcon";
-import { cn } from "@/utils/cn";
 
-const CourseCard = ({ course, onEdit, onDelete, onAddAssignment }) => {
+const CourseCard = ({ course, onEdit, onDelete, onAddAssignment, onViewNotes }) => {
   const getGradeColor = (grade) => {
     if (grade >= 90) return "grade-a";
     if (grade >= 80) return "grade-b";
@@ -74,7 +75,7 @@ const CourseCard = ({ course, onEdit, onDelete, onAddAssignment }) => {
         )}
       </div>
 
-      <div className="flex items-center space-x-2 pt-4 border-t border-gray-100">
+<div className="flex items-center space-x-2 pt-4 border-t border-gray-100">
         <Button
           size="sm"
           variant="outline"
@@ -83,6 +84,15 @@ const CourseCard = ({ course, onEdit, onDelete, onAddAssignment }) => {
         >
           <ApperIcon name="Plus" className="w-3 h-3 mr-1" />
           Add Assignment
+        </Button>
+        <Button
+          size="sm"
+          variant="outline"
+          onClick={() => onViewNotes(course.Id)}
+          className="flex-1 text-xs"
+        >
+          <ApperIcon name="FileText" className="w-3 h-3 mr-1" />
+          Notes
         </Button>
         <Button
           size="sm"

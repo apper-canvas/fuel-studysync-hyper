@@ -1,8 +1,8 @@
 import coursesData from "@/services/mockData/courses.json";
 
-let courses = [...coursesData];
-
 const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+let courses = [...coursesData];
 
 export const courseService = {
   async getAll() {
@@ -12,7 +12,7 @@ export const courseService = {
 
   async getById(id) {
     await delay(200);
-    const course = courses.find(c => c.Id === id);
+    const course = courses.find(c => c.Id === parseInt(id));
     if (!course) {
       throw new Error("Course not found");
     }
@@ -32,7 +32,7 @@ export const courseService = {
 
   async update(id, courseData) {
     await delay(400);
-    const index = courses.findIndex(c => c.Id === id);
+    const index = courses.findIndex(c => c.Id === parseInt(id));
     if (index === -1) {
       throw new Error("Course not found");
     }
@@ -42,7 +42,7 @@ export const courseService = {
 
   async delete(id) {
     await delay(300);
-    const index = courses.findIndex(c => c.Id === id);
+    const index = courses.findIndex(c => c.Id === parseInt(id));
     if (index === -1) {
       throw new Error("Course not found");
     }

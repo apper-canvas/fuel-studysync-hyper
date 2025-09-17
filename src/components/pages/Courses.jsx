@@ -1,18 +1,19 @@
-import React, { useState, useEffect } from "react";
-import CourseCard from "@/components/molecules/CourseCard";
-import CourseModal from "@/components/organisms/CourseModal";
-import AssignmentModal from "@/components/organisms/AssignmentModal";
-import Loading from "@/components/ui/Loading";
-import Error from "@/components/ui/Error";
-import Empty from "@/components/ui/Empty";
-import Button from "@/components/atoms/Button";
-import Input from "@/components/atoms/Input";
-import ApperIcon from "@/components/ApperIcon";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { courseService } from "@/services/api/courseService";
 import { assignmentService } from "@/services/api/assignmentService";
 import { toast } from "react-toastify";
-
+import ApperIcon from "@/components/ApperIcon";
+import AssignmentModal from "@/components/organisms/AssignmentModal";
+import CourseModal from "@/components/organisms/CourseModal";
+import CourseCard from "@/components/molecules/CourseCard";
+import Button from "@/components/atoms/Button";
+import Input from "@/components/atoms/Input";
+import Empty from "@/components/ui/Empty";
+import Loading from "@/components/ui/Loading";
+import Error from "@/components/ui/Error";
 const Courses = () => {
+  const navigate = useNavigate();
   const [courses, setCourses] = useState([]);
   const [assignments, setAssignments] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -88,7 +89,11 @@ const Courses = () => {
     setShowCourseModal(false);
     setShowAssignmentModal(false);
     setSelectedCourse(null);
-    setSelectedCourseId(null);
+setSelectedCourseId(null);
+  };
+
+  const handleViewNotes = (courseId) => {
+    navigate(`/courses/${courseId}/notes`);
   };
 
   // Filter courses based on search term
@@ -147,13 +152,14 @@ const Courses = () => {
         />
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredCourses.map((course) => (
+{filteredCourses.map((course) => (
             <CourseCard
               key={course.Id}
               course={course}
               onEdit={handleEditCourse}
               onDelete={handleDeleteCourse}
               onAddAssignment={handleAddAssignment}
+              onViewNotes={handleViewNotes}
             />
           ))}
         </div>
@@ -174,7 +180,7 @@ const Courses = () => {
         courses={courses}
         selectedCourseId={selectedCourseId}
       />
-    </div>
+</div>
   );
 };
 
