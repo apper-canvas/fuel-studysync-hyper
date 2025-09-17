@@ -1,9 +1,32 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
+import { AuthContext } from "@/App";
 import { cn } from "@/utils/cn";
-import Button from "@/components/atoms/Button";
 import ApperIcon from "@/components/ApperIcon";
+import Button from "@/components/atoms/Button";
 
+const LogoutButton = () => {
+  const authContext = useContext(AuthContext);
+
+  const handleLogout = async () => {
+    if (authContext && authContext.logout) {
+      await authContext.logout();
+    }
+  };
+
+  return (
+    <Button
+      variant="ghost"
+      size="sm"
+      onClick={handleLogout}
+      className="flex items-center space-x-2 text-gray-600 hover:text-red-600"
+      title="Logout"
+    >
+      <ApperIcon name="LogOut" className="w-4 h-4" />
+      <span className="hidden sm:inline">Logout</span>
+    </Button>
+  );
+};
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -52,9 +75,14 @@ const Header = () => {
                 </NavLink>
               ))}
             </nav>
+{/* User Actions */}
+            <div className="hidden md:flex items-center space-x-3">
+              <LogoutButton />
+            </div>
 
             {/* Mobile menu button */}
-            <div className="md:hidden">
+            <div className="md:hidden flex items-center space-x-2">
+              <LogoutButton />
               <Button
                 variant="ghost"
                 size="sm"
@@ -63,10 +91,10 @@ const Header = () => {
               >
                 <ApperIcon name={isMobileMenuOpen ? "X" : "Menu"} className="w-5 h-5" />
               </Button>
+</Button>
             </div>
           </div>
         </div>
-
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
           <div className="md:hidden bg-white border-t border-gray-100 shadow-lg">
