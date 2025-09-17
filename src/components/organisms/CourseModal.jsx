@@ -11,6 +11,7 @@ const [formData, setFormData] = useState({
     name: "",
     title: "",
     instructor: "",
+    description: "",
     credits: "",
     color: "#7C3AED",
     schedule: {
@@ -33,15 +34,17 @@ const [formData, setFormData] = useState({
 name: course.name || "",
         title: course.title || "",
         instructor: course.instructor || "",
+        description: course.description || "",
         credits: course.credits?.toString() || "",
         color: course.color || "#7C3AED",
         schedule: course.schedule || { days: [], time: "", location: "" }
       });
     } else {
       setFormData({
-        name: "",
+name: "",
         title: "",
         instructor: "",
+        description: "",
         credits: "",
         color: "#7C3AED",
         schedule: { days: [], time: "", location: "" }
@@ -123,12 +126,20 @@ name: course.name || "",
             placeholder="e.g., MATH 301 - Advanced Calculus III"
           />
 
-          <Input
+<Input
             label="Instructor"
             value={formData.instructor}
             onChange={(e) => setFormData(prev => ({ ...prev, instructor: e.target.value }))}
             placeholder="e.g., Dr. Smith"
             required
+          />
+          <Input
+            label="Description"
+            value={formData.description}
+            onChange={(e) => setFormData(prev => ({ ...prev, description: e.target.value }))}
+            placeholder="Course description, objectives, or additional details..."
+            multiline
+            rows={3}
           />
 
           <Input
