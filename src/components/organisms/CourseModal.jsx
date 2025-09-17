@@ -7,8 +7,9 @@ import ApperIcon from "@/components/ApperIcon";
 import { toast } from "react-toastify";
 
 const CourseModal = ({ isOpen, onClose, onSave, course = null }) => {
-  const [formData, setFormData] = useState({
+const [formData, setFormData] = useState({
     name: "",
+    title: "",
     instructor: "",
     credits: "",
     color: "#7C3AED",
@@ -29,7 +30,8 @@ const CourseModal = ({ isOpen, onClose, onSave, course = null }) => {
   useEffect(() => {
     if (course) {
       setFormData({
-        name: course.name || "",
+name: course.name || "",
+        title: course.title || "",
         instructor: course.instructor || "",
         credits: course.credits?.toString() || "",
         color: course.color || "#7C3AED",
@@ -38,6 +40,7 @@ const CourseModal = ({ isOpen, onClose, onSave, course = null }) => {
     } else {
       setFormData({
         name: "",
+        title: "",
         instructor: "",
         credits: "",
         color: "#7C3AED",
@@ -105,12 +108,19 @@ const CourseModal = ({ isOpen, onClose, onSave, course = null }) => {
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
-          <Input
+<Input
             label="Course Name"
             value={formData.name}
             onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
             placeholder="e.g., Advanced Mathematics"
             required
+          />
+          
+          <Input
+            label="Course Title"
+            value={formData.title}
+            onChange={(e) => setFormData(prev => ({ ...prev, title: e.target.value }))}
+            placeholder="e.g., MATH 301 - Advanced Calculus III"
           />
 
           <Input
