@@ -89,9 +89,8 @@ const Header = () => {
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className="p-2"
               >
-                <ApperIcon name={isMobileMenuOpen ? "X" : "Menu"} className="w-5 h-5" />
+<ApperIcon name={isMobileMenuOpen ? "X" : "Menu"} className="w-5 h-5" />
               </Button>
-</Button>
             </div>
           </div>
         </div>
